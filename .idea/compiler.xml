@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+      <entry name="!?*.aj" />
+    </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="common" />
+        <module name="service-api" />
+        <module name="service-impl" />
+        <module name="ws-api" />
+        <module name="ws-impl" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="backend" target="1.8" />
+      <module name="common" target="1.8" />
+      <module name="service" target="1.8" />
+      <module name="service-api" target="1.8" />
+      <module name="service-impl" target="1.8" />
+      <module name="ws" target="1.8" />
+      <module name="ws-api" target="1.8" />
+      <module name="ws-impl" target="1.8" />
+      <module name="wsdl-versioning" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
