@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema version="1.0"
+           targetNamespace="http://pl.kuba.ws/library"
+           xmlns:tns="http://pl.kuba.ws/library"
+           xmlns="http://www.w3.org/2001/XMLSchema"
+           xmlns:common="http://pl.kuba.ws/common">
+
+    <import schemaLocation="common_1.0.0.xsd" namespace="http://pl.kuba.ws/common" />
+
+    <element name="getBookById" type="tns:getBookById"/>
+
+    <element name="getBookByIdResponse" type="tns:getBookByIdResponse"/>
+
+    <complexType name="getBookById">
+        <sequence>
+            <element name="bookId" type="long" minOccurs="1"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="getBookByIdResponse">
+        <sequence>
+            <element name="return" type="common:bookDto" minOccurs="0"/>
+        </sequence>
+    </complexType>
+
+</schema>
+

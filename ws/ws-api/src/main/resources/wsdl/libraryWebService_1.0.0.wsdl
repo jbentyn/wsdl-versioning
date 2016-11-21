@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions targetNamespace="http://pl.kuba.ws/library" name="LibraryWebServiceImpl"
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:tns="http://pl.kuba.ws/library"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+
+
+    <types>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://pl.kuba.ws/library"
+                        schemaLocation="../schema/libraryWebService_1.0.0.xsd">
+            </xsd:import>
+        </xsd:schema>
+    </types>
+
+    <message name="getBookById">
+        <part name="parameters" element="tns:getBookById"/>
+    </message>
+    <message name="getBookByIdResponse">
+        <part name="parameters" element="tns:getBookByIdResponse"/>
+    </message>
+
+
+    <portType name="LibraryWebService">
+        <operation name="getBookById">
+            <input wsam:Action="http://pl.kuba.ws/libraryWS/getBookByIdRequest"
+                   message="tns:getBookById"/>
+            <output wsam:Action="http://pl.kuba.ws/libraryWS/getBookByIdResponse"
+                    message="tns:getBookByIdResponse"/>
+        </operation>
+
+    </portType>
+
+
+    <binding name="LibraryWebServiceBinding" type="tns:LibraryWebService">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <operation name="getBookById">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+
+    <service name="LibraryWebService">
+        <port name="LibraryWebService" binding="tns:LibraryWebServiceBinding">
+            <soap:address location="http://localhost:8080/libraryWS"/>
+        </port>
+    </service>
+</definitions>
+

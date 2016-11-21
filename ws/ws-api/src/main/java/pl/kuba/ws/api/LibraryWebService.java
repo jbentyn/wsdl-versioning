@@ -9,7 +9,7 @@ import javax.jws.soap.SOAPBinding;
 /**
  * Created by Kuba on 2016-11-19.
  */
-@WebService
+@WebService(name = "LibraryWebService", targetNamespace = "http://pl.kuba.ws/library")
 @SOAPBinding(style = SOAPBinding.Style.DOCUMENT, use= SOAPBinding.Use.LITERAL)
 public interface LibraryWebService {
 
