@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:cep="http://cep.api.cepik.msw.gov.pl"
+        xmlns:common="http://cep.api.cepik.msw.gov.pl/common"
+        xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://cep.api.cepik.msw.gov.pl">
+
+
+    <import namespace="http://cep.api.cepik.msw.gov.pl/common" schemaLocation="adresyCepCommon.xsd" />
+
+    <element name="AdresRezultatElement" type="cep:AdresRezultat"/>
+
+    <element name="AdresRezultatUdostepnianieElement" type="cep:AdresRezultatUdostepnianie"/>
+
+    <complexType name="AdresRezultat">
+    <complexContent>
+        <extension base="common:AdresBazowy" />
+    </complexContent>
+    </complexType>
+
+    <complexType name="AdresRezultatUdostepnianie">
+        <complexContent>
+            <extension base="common:AdresBazowy">
+                <sequence>
+                    <element name="kodPlacowkiPocztowej" type="string" minOccurs="0"/>
+                    <element name="nazwaPlacowkiPocztowej" type="string" minOccurs="0"/>
+                    <element name="kodTeryt" type="string" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <!--&lt;!&ndash;OGOLNE&ndash;&gt;-->
+    <!--<complexType name="WartoscSlownikowa">-->
+        <!--<sequence>-->
+            <!--<element name="kod">-->
+                <!--<simpleType>-->
+                    <!--<restriction base="string">-->
+                        <!--<minLength value="1"/>-->
+                        <!--<maxLength value="210"/>-->
+                    <!--</restriction>-->
+                <!--</simpleType>-->
+            <!--</element>-->
+            <!--<element name="wartoscOpisowa" nillable="true">-->
+                <!--<simpleType>-->
+                    <!--<restriction base="string">-->
+                        <!--<maxLength value="400"/>-->
+                    <!--</restriction>-->
+                <!--</simpleType>-->
+            <!--</element>-->
+        <!--</sequence>-->
+    <!--</complexType>-->
+
+    <!--<complexType name="WartoscSlownikowaRezultat">-->
+        <!--<sequence>-->
+            <!--<element name="kod" type="cep:cepStringMin1Max210"/>-->
+            <!--<element name="wartoscOpisowa" type="cep:cepString400" nillable="true"/>-->
+        <!--</sequence>-->
+    <!--</complexType>-->
+
+    <!--&lt;!&ndash;STRINGI&ndash;&gt;-->
+    <!--<complexType name="cepString">-->
+        <!--<sequence>-->
+            <!--<element name="wartosc" type="string" minOccurs="0"/>-->
+        <!--</sequence>-->
+    <!--</complexType>-->
+
+    <!--<complexType name="cepString6">-->
+        <!--<sequence>-->
+            <!--<element name="wartosc" minOccurs="0">-->
+                <!--<simpleType>-->
+                    <!--<restriction base="string">-->
+                        <!--<maxLength value="6"/>-->
+                    <!--</restriction>-->
+                <!--</simpleType>-->
+            <!--</element>-->
+        <!--</sequence>-->
+    <!--</complexType>-->
+
+    <!--<complexType name="cepString50">-->
+        <!--<sequence>-->
+            <!--<element name="wartosc" minOccurs="0">-->
+                <!--<simpleType>-->
+                    <!--<restriction base="string">-->
+                        <!--<maxLength value="50"/>-->
+                    <!--</restriction>-->
+                <!--</simpleType>-->
+            <!--</element>-->
+        <!--</sequence>-->
+    <!--</complexType>-->
+
+    <!--<complexType name="cepString60">-->
+        <!--<sequence>-->
+            <!--<element name="wartosc" minOccurs="0">-->
+                <!--<simpleType>-->
+                    <!--<restriction base="string">-->
+                        <!--<maxLength value="60"/>-->
+                    <!--</restriction>-->
+                <!--</simpleType>-->
+            <!--</element>-->
+        <!--</sequence>-->
+    <!--</complexType>-->
+
+    <!--<complexType name="cepString90">-->
+        <!--<sequence>-->
+            <!--<element name="wartosc" minOccurs="0">-->
+                <!--<simpleType>-->
+                    <!--<restriction base="string">-->
+                        <!--<maxLength value="90"/>-->
+                    <!--</restriction>-->
+                <!--</simpleType>-->
+            <!--</element>-->
+        <!--</sequence>-->
+    <!--</complexType>-->
+
+    <!--<complexType name="cepString100">-->
+        <!--<sequence>-->
+            <!--<element name="wartosc" minOccurs="0">-->
+                <!--<simpleType>-->
+                    <!--<restriction base="string">-->
+                        <!--<maxLength value="100"/>-->
+                    <!--</restriction>-->
+                <!--</simpleType>-->
+            <!--</element>-->
+        <!--</sequence>-->
+    <!--</complexType>-->
+
+    <!--<complexType name="cepString210">-->
+        <!--<sequence>-->
+            <!--<element name="wartosc" minOccurs="0">-->
+                <!--<simpleType>-->
+                    <!--<restriction base="string">-->
+                        <!--<maxLength value="210"/>-->
+                    <!--</restriction>-->
+                <!--</simpleType>-->
+            <!--</element>-->
+        <!--</sequence>-->
+    <!--</complexType>-->
+
+    <!--<complexType name="cepString270">-->
+        <!--<sequence>-->
+            <!--<element name="wartosc" minOccurs="0">-->
+                <!--<simpleType>-->
+                    <!--<restriction base="string">-->
+                        <!--<maxLength value="270"/>-->
+                    <!--</restriction>-->
+                <!--</simpleType>-->
+            <!--</element>-->
+        <!--</sequence>-->
+    <!--</complexType>-->
+
+    <!--<complexType name="cepString400">-->
+        <!--<sequence>-->
+            <!--<element name="wartosc" minOccurs="0">-->
+                <!--<simpleType>-->
+                    <!--<restriction base="string">-->
+                        <!--<maxLength value="400"/>-->
+                    <!--</restriction>-->
+                <!--</simpleType>-->
+            <!--</element>-->
+        <!--</sequence>-->
+    <!--</complexType>-->
+
+    <!--<complexType name="cepStringMin1Max210">-->
+        <!--<sequence>-->
+            <!--<element name="wartosc" minOccurs="0">-->
+                <!--<simpleType>-->
+                    <!--<restriction base="string">-->
+                        <!--<minLength value="1"/>-->
+                        <!--<maxLength value="210"/>-->
+                    <!--</restriction>-->
+                <!--</simpleType>-->
+            <!--</element>-->
+        <!--</sequence>-->
+    <!--</complexType>-->
+
+</schema>

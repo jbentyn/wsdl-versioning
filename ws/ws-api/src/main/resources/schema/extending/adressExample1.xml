@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ext:addressWithoutFlatNumber 
+xmlns:ext="http://example.com/extends" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://example.com/extends file:///D:/programowanie/projekty/wsdl-versioning/ws/ws-api/src/main/resources/schema/extending/extend1.xsd">
+	
+	<person>
+		<firstName>www</firstName>
+		<surname>aaaa</surname>
+	</person>
+	<street>asda</street>
+	<zipCode>12-000</zipCode>
+    <houseNumber>12</houseNumber>
+	<flatNumber>123</flatNumber>
+
+</ext:addressWithoutFlatNumber>

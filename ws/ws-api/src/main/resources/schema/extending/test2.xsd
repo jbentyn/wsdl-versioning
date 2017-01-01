@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://example.com/extends"
+           xmlns="http://example.com/extends">
+
+<xs:include schemaLocation="test.xsd" />
+
+    <xs:element name="test2" type="OgraniczonyTyp"/>
+
+    <xs:complexType name="OgraniczonyTyp">
+        <xs:complexContent>
+            <xs:restriction base="BazowyTyp">
+                <xs:sequence>
+                    <xs:element name="a" type="xs:string" minOccurs="4" maxOccurs="6"/>
+                    <xs:element name="c" >
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:maxLength value="40"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                            </xs:element>
+                    <!--<xs:element name="d" type="xs:string"/>-->
+                </xs:sequence>
+            </xs:restriction>
+
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>

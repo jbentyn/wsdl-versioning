@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:cep="http://cep.api.cepik.msw.gov.pl"
+        xmlns:common="http://cep.api.cepik.msw.gov.pl/common"
+        xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://cep.api.cepik.msw.gov.pl">
+
+
+    <import namespace="http://cep.api.cepik.msw.gov.pl/common" schemaLocation="adresyCepCommon.xsd"/>
+
+    <element name="AdresRezultatElement" type="cep:AdresRezultat"/>
+
+    <element name="AdresRezultatUdostepnianieElement" type="cep:AdresRezultatUdostepnianie"/>
+
+    <complexType name="AdresRezultat">
+        <complexContent>
+            <restriction base="common:AdresBazowy">
+                <sequence>
+                    <element name="kraj" type="common:WartoscSlownikowa" minOccurs="0"/>
+                    <element name="ulica" type="common:cepString270" minOccurs="0"/>
+                    <element name="kodTerytUlicy" type="common:WartoscSlownikowa" minOccurs="0">
+                        <annotation>
+                            <documentation>DICT.056 Słownik nazw ulic</documentation>
+                        </annotation>
+                    </element>
+                    <element name="numerDomu" type="common:cepString90" minOccurs="0"/>
+                    <element name="numerLokalu" type="common:cepString60" minOccurs="0"/>
+                    <element name="miejscowosc" type="common:cepString210" minOccurs="0"/>
+                    <element name="kodTerytMiejscowosci" type="common:WartoscSlownikowa" minOccurs="0">
+                        <annotation>
+                            <documentation>DICT.055 Słownik nazw miejscowości</documentation>
+                        </annotation>
+                    </element>
+                    <element name="kodPocztowy" type="common:cepString6" minOccurs="0"/>
+
+                    <element name="kodTerytGminy" type="common:WartoscSlownikowa" minOccurs="0">
+                        <annotation>
+                            <documentation>DICT.054 Słownik nazw gmin</documentation>
+                        </annotation>
+                    </element>
+                    <element name="nazwaGminy" type="common:cepString210" minOccurs="0"/>
+                    <element name="kodTerytPowiatu" type="common:WartoscSlownikowa" minOccurs="0">
+                        <annotation>
+                            <documentation>DICT.053 Słownik nazw powiatów</documentation>
+                        </annotation>
+                    </element>
+                    <element name="nazwaPowiatu" type="common:cepString100" minOccurs="0"/>
+
+                    <element name="kodTerytWojewodztwa" type="common:WartoscSlownikowa" minOccurs="0">
+                        <annotation>
+                            <documentation>DICT.052 Słownik nazw województw</documentation>
+                        </annotation>
+                    </element>
+                    <element name="nazwaWojewodztwa" type="common:cepString50" minOccurs="0"/>
+                </sequence>
+            </restriction>
+        </complexContent>
+    </complexType>
+
+    <complexType name="AdresRezultatUdostepnianie">
+        <complexContent>
+            <restriction base="common:AdresBazowy">
+                <sequence>
+                    <element name="kraj" type="common:WartoscSlownikowa" minOccurs="0"/>
+                    <element name="ulica" type="common:cepString270" minOccurs="0"/>
+                    <element name="kodTerytUlicy" type="common:WartoscSlownikowa" minOccurs="0">
+                        <annotation>
+                            <documentation>DICT.056 Słownik nazw ulic</documentation>
+                        </annotation>
+                    </element>
+                    <element name="numerDomu" type="common:cepString90" minOccurs="0"/>
+                    <element name="numerLokalu" type="common:cepString60" minOccurs="0"/>
+                    <element name="miejscowosc" type="common:cepString210" minOccurs="0"/>
+                    <element name="kodTerytMiejscowosci" type="common:WartoscSlownikowa" minOccurs="0">
+                        <annotation>
+                            <documentation>DICT.055 Słownik nazw miejscowości</documentation>
+                        </annotation>
+                    </element>
+                    <element name="kodPocztowy" type="common:cepString6" minOccurs="0"/>
+                    <element name="kodTerytGminy" type="common:WartoscSlownikowa" minOccurs="0">
+                        <annotation>
+                            <documentation>DICT.054 Słownik nazw gmin</documentation>
+                        </annotation>
+                    </element>
+                    <element name="nazwaGminy" type="common:cepString210" minOccurs="0"/>
+                    <element name="kodTerytPowiatu" type="common:WartoscSlownikowa" minOccurs="0">
+                        <annotation>
+                            <documentation>DICT.053 Słownik nazw powiatów</documentation>
+                        </annotation>
+                    </element>
+                    <element name="nazwaPowiatu" type="common:cepString100" minOccurs="0"/>
+
+                    <element name="kodTerytWojewodztwa" type="common:WartoscSlownikowa" minOccurs="0">
+                        <annotation>
+                            <documentation>DICT.052 Słownik nazw województw</documentation>
+                        </annotation>
+                    </element>
+                    <element name="nazwaWojewodztwa" type="common:cepString50" minOccurs="0"/>
+
+                    <element name="kodPlacowkiPocztowej" type="string" minOccurs="0"/>
+                    <element name="nazwaPlacowkiPocztowej" type="string" minOccurs="0"/>
+                    <element name="kodTeryt" type="string" minOccurs="0"/>
+                </sequence>
+            </restriction>
+        </complexContent>
+    </complexType>
+
+
+</schema>

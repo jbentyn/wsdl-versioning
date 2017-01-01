@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://example.com/extends"
+           xmlns:bs="http://example.com/base"
+           targetNamespace="http://example.com/extends">
+
+    <xs:import namespace="http://example.com/base" schemaLocation="base.xsd"/>
+
+    <xs:element name="addressWithoutFlatNumber" type="addressWithoutFlatNumberType"/>
+
+    <xs:complexType name="addressWithoutFlatNumberType">
+        <xs:complexContent>
+            <xs:restriction base="bs:addressBaseType">
+                <xs:sequence>
+                    <xs:element name="person" type="bs:personType" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="street" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="zipCode" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="houseNumber" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                    <!--<xs:element name="flatNumber_1" type="xs:string" minOccurs="0" maxOccurs="1"/>-->
+                    <!--<element name="flatNumber" type="string" minOccurs="0" maxOccurs="0"/>-->
+                </xs:sequence>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+
+</xs:schema>

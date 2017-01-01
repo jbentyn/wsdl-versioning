@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://example.com/base"
+        xmlns="http://example.com/base"
+        >
+
+
+    <xs:complexType name="personType">
+        <xs:sequence>
+            <xs:element name="firstName" type="xs:string"/>
+            <xs:element name="surname" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="addressBaseType" abstract="true">
+        <xs:sequence>
+            <xs:element name="person" type="personType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="street" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="zipCode" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="houseNumber" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="flatNumber" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <!--<element name="person" type="tns:personType" />-->
+
+
+</xs:schema>
